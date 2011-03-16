@@ -44,6 +44,11 @@ set tabstop=2 "Number of spaces to use for tabs
 set shiftwidth=2 "Number of spaces to insert when tabbing
 set cindent "Indentation for C-code
 
+"Use this nice color scheme
+set background=dark
+colorscheme wombat
+syntax on
+
 set ignorecase "Ignore case when searching
 set smartcase "Dont ignore case if search contains one upper cased letter
 
