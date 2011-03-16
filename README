@@ -1,0 +1,3 @@
+* Checkout this repo as ~/.vim
+* Create the file ~/.vimrc and put this in it:
+  runtime vimrc
