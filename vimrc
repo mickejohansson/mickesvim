@@ -46,7 +46,7 @@ set cindent "Indentation for C-code
 
 "Use this nice color scheme
 set background=dark
-colorscheme wombat
+colorscheme wombat_m
 syntax on
 
 set ignorecase "Ignore case when searching
