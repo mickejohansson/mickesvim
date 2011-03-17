@@ -29,6 +29,9 @@ set laststatus=2 "Always show the status line
 let g:buftabs_in_statusline=1 "Show buftabs in status line
 let g:buftabs_only_basename=1 "Show just the filename of each buffer
 
+"Show space errors
+let c_space_errors = 1
+
 "Faster way of closing the current tab
 map <leader>w :bw<cr>
 

@@ -38,7 +38,7 @@ hi SpecialKey	guifg=#808080 guibg=#343434 gui=none
 
 " Syntax highlighting
 hi Comment 		guifg=#99968b gui=italic
-hi Todo 		guifg=#8f8f8f gui=italic
+hi Todo 		guifg=#000000 guibg=#e5786d gui=italic
 hi Constant 	guifg=#e5786d gui=none
 hi String 		guifg=#95e454 gui=italic
 hi Identifier 	guifg=#cae682 gui=none
@@ -49,5 +49,9 @@ hi Keyword		guifg=#8ac6f2 gui=none
 hi PreProc 		guifg=#e5786d gui=none
 hi Number		guifg=#e5786d gui=none
 hi Special		guifg=#e7f6da gui=none
+
+hi cError 		guifg=#000000 guibg=#e5786d gui=italic
+hi cSpaceError 		guifg=#000000 guibg=#99968b gui=italic
+
 
 
