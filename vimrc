@@ -30,7 +30,7 @@ let g:buftabs_in_statusline=1 " Show buftabs in status line
 let g:buftabs_only_basename=1 " Show just the filename of each buffer
 
 " Show space errors
-let c_space_errors = 1
+" let c_space_errors = 1
 
 " Faster way of closing the current tab
 map <leader>w :bw<cr>
@@ -81,6 +81,9 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
       \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
       \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
+
+" Set terminal-like mode for autocompletion
+set completeopt=menu,longest
 
 " Use f7 and f8 to switch between buffers
 map <f7> :bp!<cr>
