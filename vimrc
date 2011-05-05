@@ -5,6 +5,9 @@ set history=700
 filetype plugin on
 filetype indent on
 
+" Make sure vim recognizes .tml files as xml
+au BufNewFile,BufRead *.tml set filetype=xml
+
 " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -23,7 +26,10 @@ map <leader>e :e! ~/.vimrc<cr>
 autocmd! bufwritepost .vimrc source $HOME/.vimrc
 
 " Persistent undo
-set undolevels=1000 " maximum number of changes that can be undone
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
 set laststatus=2 " Always show the status line
 let g:buftabs_in_statusline=1 " Show buftabs in status line
@@ -72,6 +78,7 @@ map <C-right> <C-i>
 
 " Use space space to search
 map <space> /
+map <S-space> ?
 map <silent> <leader><cr> :noh<cr>
 
 " Use Control-Space for autocompletion
@@ -85,11 +92,15 @@ imap <C-@> <C-Space>
 " Set terminal-like mode for autocompletion
 set completeopt=menu,longest
 
-" Use f7 and f8 to switch between buffers
-map <f7> :bp!<cr>
-map <f8> :bn!<cr>
-imap <f7> <Esc>:bp!<cr>
-imap <f8> <Esc>:bn!<cr>
+" Use Control L/H to switch between buffers
+map <C-h> :bp!<cr>
+map <C-l> :bn!<cr>
+imap <C-h> <Esc>:bp!<cr>
+imap <C-l> <Esc>:bn!<cr>
+
+" Use Control Up/Down to switch between errors
+map <C-up> :cp!<cr>
+map <C-down> :cn!<cr>
 
 " Keep the cursor on the same column when switching buffers
 set nostartofline
@@ -97,10 +108,15 @@ set nostartofline
 " Use jj to exit insert mode 
 imap jj <Esc>
 
-" Open the fussyfinder file mode with Ctrl-f
+" No caching for fuzzy finder
+let g:fuf_help_cache_dir = ''
+let g:fuf_tag_cache_dir = ''
+let g:fuf_taggedfile_cache_dir = ''
+
+" Open the fuzzy finder file mode with Ctrl-f
 map <C-f> :FufFile<cr>
 
-" Open the fussy finder tag mode with Ctrl-t
+" Open the fuzzy finder tag mode with Ctrl-t
 map <C-t> :FufTag<cr>
 
 " Press F12 to save and make
