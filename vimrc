@@ -81,6 +81,9 @@ map <space> /
 map <S-space> ?
 map <silent> <leader><cr> :noh<cr>
 
+" Press ctrl+r to replace all occurenses of a text selected visually
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
 " Use Control-Space for autocompletion
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
       \ "\<lt>C-n>" :
